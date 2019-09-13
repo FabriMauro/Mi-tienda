@@ -1,0 +1,45 @@
+<h2 class=" text-info text-center mt-4">Productos</h2>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr class=" text-center">
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Imagen</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <th scope="row"> <a [title]="product.name + ' detalles especificos'"> {{ product.name }}</a>
+
+            </th>
+
+            <td>
+                <p *ngIf="product.description">
+                    {{ product.description }}
+                </p>
+                <button class="btn btn-info" (click)="share()">
+                  Compartir
+                </button>
+
+            </td>
+            <td>
+                <div class="text-center">
+                    <img [src]="product.img" class=" cell img-fluid" alt="...">
+                </div>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
