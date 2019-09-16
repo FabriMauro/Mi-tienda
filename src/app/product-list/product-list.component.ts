@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// importamos
+// importamos el ts products.ts
 import { products } from '../products';
 
 
@@ -19,6 +19,10 @@ export class ProductListComponent implements OnInit {
 
   share() {
     window.alert('El Producto a sido compartido!');
+  }
+
+  onNotifica(){
+    window.alert('Se le notificará cuando el producto salga a la venta!');
   }
 
 }

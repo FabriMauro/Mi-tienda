@@ -11,8 +11,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of products">
-            <th scope="row"> <a [title]="product.name + ' detalles especificos'"> {{ product.name }}</a>
+        <tr *ngFor="let product of products; index as productoId">
+            <th scope="row"> <a [title]="product.name + ' detalles especificos'" [routerLink]="['/productos',productoId]"> {{ product.name }}</a>
 
             </th>
 
@@ -23,6 +23,10 @@
                 <button class="btn btn-info" (click)="share()">
                   Compartir
                 </button>
+                <!-- Paso el producto actual como entrada al componente utilizando el enlace de propiedad -->
+                <app-products-alerts [product]="product" (notificar)="onNotifica()">
+
+                </app-products-alerts>
 
             </td>
             <td>

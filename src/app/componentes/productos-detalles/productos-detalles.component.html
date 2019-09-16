@@ -1,0 +1,15 @@
+<h2 class="text-danger my-3">Detalles del Producto</h2>
+<div class="text-center">
+    <img [src]="producto.img" class="rounded" alt="...">
+</div>
+<div class="card-body">
+    <h5 class="card-title">{{ producto.name }}</h5>
+    <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver más link...</a> -->
+    <ul class="list-group list-group-flush text-justify">
+        <li class="list-group-item"> <strong>Precio:</strong> {{ producto.price | currency }} </li>
+        <li class="list-group-item"> <strong>Descripción:</strong> {{ producto.description }} </li>
+
+    </ul>
+    <button (click)="addtoCarrito(producto)" class="btn btn-success my-3">Comprar</button>
+
+</div>
